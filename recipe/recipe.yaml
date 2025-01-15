@@ -22,6 +22,7 @@ requirements:
     - ${{ compiler('cxx') }}
     - ${{ stdlib('c') }}
     - cmake
+    - pkg-config
     - make
   host:
     - libvpl
