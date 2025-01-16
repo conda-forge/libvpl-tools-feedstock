@@ -25,11 +25,11 @@ requirements:
     - pkg-config
     - make
   host:
+    - xorg-xorgproto
     - libvpl
     - libdrm
     - libpciaccess
-    - if: linux
-      then: xorg-xorgproto
+    - libgl-devel
     # - wayland
 
 tests:
