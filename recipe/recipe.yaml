@@ -1,14 +1,13 @@
 context:
-  name: libvpl-tools
-  version: "1.2.0"
+  version: "1.4.0"
 
 package:
-  name: ${{ name|lower }}
+  name: libvpl-tools
   version: ${{ version }}
 
 source:
   url: https://github.com/intel/libvpl-tools/archive/refs/tags/v${{ version }}.tar.gz
-  sha256: b6768982abdef340eb14764499d9cb7201b1c74d319f93f3ffb07c980e04f7fa
+  sha256: 95d85a2b7cf8f6a3089c048c98c034bc7367925708ca325756b8d5c5c03c4ecf
 
 build:
   skip:
@@ -23,32 +22,34 @@ requirements:
     - ${{ stdlib('c') }}
     - cmake
     - make
+    - pkg-config
   host:
     - libvpl
     - libdrm
     - libpciaccess
+    - xorg-xorgproto
     # - wayland
 
 tests:
   - script:
-    - system_analyzer -help
-    - metrics_monitor -help
+      - system_analyzer -help
+      - metrics_monitor -help
     # The following commands return error on -help
     # So "grep" for something useful
-    - test -x ${PREFIX}/bin/val-surface-sharing
-    - val-surface-sharing -help | grep Usage
-    - test -x ${PREFIX}/bin/vpl-import-export
-    - vpl-import-export -help | grep Usage
-    - test -x ${PREFIX}/bin/vpl-inspect
-    - vpl-inspect -help | grep Usage
-    - test -x ${PREFIX}/bin/sample_decode
-    - sample_decode -help | grep Usage
-    - test -x ${PREFIX}/bin/sample_vpp
-    - sample_vpp -help | grep Usage
-    - test -x ${PREFIX}/bin/sample_encode
-    - sample_encode -help | grep Usage
-    - test -x ${PREFIX}/bin/sample_multi_transcode
-    - sample_multi_transcode -help | grep Usage
+      - test -x ${PREFIX}/bin/val-surface-sharing
+      - val-surface-sharing -help | grep Usage
+      - test -x ${PREFIX}/bin/vpl-import-export
+      - vpl-import-export -help | grep Usage
+      - test -x ${PREFIX}/bin/vpl-inspect
+      - vpl-inspect -help | grep Usage
+      - test -x ${PREFIX}/bin/sample_decode
+      - sample_decode -help | grep Usage
+      - test -x ${PREFIX}/bin/sample_vpp
+      - sample_vpp -help | grep Usage
+      - test -x ${PREFIX}/bin/sample_encode
+      - sample_encode -help | grep Usage
+      - test -x ${PREFIX}/bin/sample_multi_transcode
+      - sample_multi_transcode -help | grep Usage
 
 about:
   homepage: https://github.com/intel/media-driver
