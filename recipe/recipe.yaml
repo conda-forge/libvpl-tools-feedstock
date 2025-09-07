@@ -1,5 +1,5 @@
 context:
-  version: "1.2.0"
+  version: "1.4.0"
 
 package:
   name: libvpl-tools
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/intel/libvpl-tools/archive/refs/tags/v${{ version }}.tar.gz
-  sha256: b6768982abdef340eb14764499d9cb7201b1c74d319f93f3ffb07c980e04f7fa
+  sha256: 95d85a2b7cf8f6a3089c048c98c034bc7367925708ca325756b8d5c5c03c4ecf
 
 build:
   skip:
