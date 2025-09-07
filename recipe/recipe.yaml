@@ -25,7 +25,7 @@ requirements:
     - pkg-config
   host:
     - libvpl
-    - libdrm 2.4.215=*_1
+    - libdrm
     - libpciaccess
     - xorg-xorgproto
     # - wayland
