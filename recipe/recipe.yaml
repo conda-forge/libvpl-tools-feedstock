@@ -27,6 +27,7 @@ requirements:
     - libvpl
     - libdrm
     - libpciaccess
+    - xorg-xorgproto
     # - wayland
 
 tests:
